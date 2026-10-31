@@ -101,5 +101,4 @@ npm start          # starts Express on $PORT, serves API + frontend
 All endpoints except `/api/health` and `/api/auth/*` require an `Authorization: Bearer <token>` header.
 
 ## 👩‍💻 Author
-
-Akshita Bhardwaj | B.Tech CSE | Graphic Era University
+Aryan Tomar(Teammate:Akshita Bhardwaj) | B.Tech CSE | Graphic Era University
