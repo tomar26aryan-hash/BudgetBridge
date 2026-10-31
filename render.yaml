@@ -1,0 +1,23 @@
+# Render "Blueprint": lets you create the whole web service in one click.
+# Dashboard -> New -> Blueprint -> pick this repo.
+# (The MySQL database lives on Aiven, so only the web service is defined here.)
+services:
+  - type: web
+    name: budgetbridge
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    # db:init creates the tables if they do not exist yet (safe to run on every start)
+    startCommand: npm run db:init && npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: NODE_ENV
+        value: production
+      # Render generates a strong random value for you.
+      - key: JWT_SECRET
+        generateValue: true
+      # Paste the Aiven "Service URI" when Render asks for it.
+      - key: DATABASE_URL
+        sync: false

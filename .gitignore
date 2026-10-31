@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# build output
+frontend/build/
+
+# secrets - NEVER commit these
+.env
+.env.local
+.env.*.local
+# (the .env.example templates ARE committed on purpose)
+
+# logs & OS junk
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
